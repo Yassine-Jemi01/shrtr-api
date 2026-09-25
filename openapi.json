@@ -93,7 +93,7 @@
                         }
                     },
                     "422": {
-                        "description": "Either DTO validation failed (body carries an `errors` map keyed by property path — note the wire field `alias` validates under the path `customAlias`), or the service rejected the URL (denylist / DNS blocklist / points back to this service; body carries only `detail`, e.g. \"This URL is not allowed.\" or \"URL must not point to this service.\").",
+                        "description": "Either DTO validation failed (body carries an `errors` map keyed by property path — note the wire field `alias` validates under the path `customAlias`), or the service rejected the URL (denylist / another URL shortener / DNS blocklist / points back to this service; body carries only `detail`, e.g. \"This URL is not allowed.\", \"Links to other URL shorteners can't be shortened here. Use the original destination instead.\" or \"URL must not point to this service.\").",
                         "content": {
                             "application/problem+json": {
                                 "schema": {
