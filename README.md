@@ -2,7 +2,7 @@
 
 [![CI](https://github.com/alexander-po/shrtr-api/actions/workflows/ci.yml/badge.svg)](https://github.com/alexander-po/shrtr-api/actions/workflows/ci.yml)
 
-Official, zero-dependency examples for the **[Shrtr](https://shrtr.top)** URL-shortener JSON API.
+Official client examples for the **[Shrtr](https://shrtr.top)** URL-shortener JSON API.
 
 [Shrtr](https://shrtr.top) turns long URLs into short links with instant QR codes. The API is **free, anonymous (no API key, no signup), CORS-enabled, and rate-limited per IP**. Errors follow [RFC 7807](https://datatracker.ietf.org/doc/html/rfc7807) (`application/problem+json`).
 
@@ -86,7 +86,7 @@ Every example honours a **`SHRTR_BASE`** environment variable (default `https://
 
 ## Contributing
 
-The examples are intentionally minimal and dependency-free so they never rot. A new-language example should follow the same shape: one file, a small client (`shorten` / `stats`), a runnable demo, and RFC 7807 error handling. Open a PR.
+The examples are intentionally minimal so they are easy to review and maintain; language-specific runtime requirements are documented above. A new-language example should follow the same shape: one file, a small client (`shorten` / `stats`), a runnable demo, and RFC 7807 error handling. Open a PR.
 
 ## About
 
