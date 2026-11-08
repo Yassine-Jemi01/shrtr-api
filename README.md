@@ -65,7 +65,7 @@ All errors are `application/problem+json` (RFC 7807):
 
 ## Examples
 
-Each is a single file, **no dependencies**, with a tiny reusable client plus a runnable demo:
+Each example is a single file with a tiny reusable client and a runnable demo; runtime requirements are listed below:
 
 | Language | File | Run |
 |----------|------|-----|
