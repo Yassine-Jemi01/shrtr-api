@@ -69,8 +69,6 @@ jobs:
           echo "mock ready at $base"
 
       - name: Run examples against the mock (contract test)
-        env:
-          SHRTR_BASE: ${{ env.SHRTR_BASE }}
         run: |
           set -euo pipefail
           echo "── curl";   bash examples/curl/shorten.sh
