@@ -27,6 +27,21 @@ jobs:
         with:
           go-version: "stable"
 
+      - name: Checkout YLang 2.3.0
+        uses: actions/checkout@v4
+        with:
+          repository: Yassine-Jemi01/ylang
+          ref: v2.3.0
+          path: .tools/ylang
+          persist-credentials: false
+
+      - name: Build YLang compiler
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y libcurl4-openssl-dev pkg-config
+          make -C .tools/ylang
+          .tools/ylang/build/ylang --version
+
       - name: Lint OpenAPI spec (3.1)
         run: npx --yes @redocly/cli@1 lint openapi.json
 
@@ -63,6 +78,10 @@ jobs:
           echo "── python"; python3 examples/python/shrtr.py
           echo "── node";   node examples/javascript/shrtr.mjs
           echo "── go";     (cd examples/go && go run .)
+          echo "── ylang"
+          .tools/ylang/build/ylang check examples/ylang/main.yl
+          .tools/ylang/build/ylang build examples/ylang/main.yl -o /tmp/shrtr-ylang
+          /tmp/shrtr-ylang
 
       - name: Stop Prism mock
         if: always()
